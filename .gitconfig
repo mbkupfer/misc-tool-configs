@@ -1,16 +1,11 @@
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
-[winUpdater]
-	recentlySeenVersion = 2.19.1.windows.1
 [user]
 	name = Maxim Kupfer
-	email = MKupfer@staffingindustry.com
+	email = mbkupfer@gmail.com
+
 [alias]
 	s = status
 	co = checkout
-	l = log --graph --all --full-history --date-order --date=short --color --abbrev-commit --decorate
 	ci = commit
-	l1 = log --oneline
+	lol = log --graph --decorate --pretty=oneline --all --abbrev-commit
+	rp = rev-parse --short
+	alist = config --get-regexp alias
