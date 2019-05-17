@@ -1,5 +1,6 @@
 # TABLE OF CONTENTS
 # -------------------------
+# SETTINGS
 # ENVIRONMENT_VARIABLES 
 # PATH
 # PROMPT
@@ -8,17 +9,19 @@
 # MISC
 # ------------------------
 
+# SETTINGS
+set -o vi # use vimode
+bind 'set completion-ignore-case on'
 
 # ENVIRONMENT_VARIABLES
 export FLASK_ENV="development" 
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
+export REACT_EDITOR='code'
 
 # PATH
 PATH=$PATH:~/bin
-PATH=$PATH:~/Library/Python/3.7/bin
 PATH=$PATH:/usr/local/bin/code #vscode
-PATH=/Applications/MacVim.app/Contents/bin:$PATH
 export PATH
 
 # PROMPT
@@ -26,11 +29,12 @@ export PATH
 PS1="\u@\h \w \[\033[32m\]\$(parse_git_branch)\[\033[0m\]$ "
 
 # ALIASES
-alias python='python3'
-alias pip='pip3'
-alias idle='python -m idlelib.idle'
+
 alias activate='source venv/bin/activate'
 alias ls='ls -Lho'
+alias python='python3'
+alias sp='source ~/.bash_profile'
+alias vim='mvim -v'
 alias rmraf='rm -rf'
 
 # FUNCTIONS
