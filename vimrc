@@ -13,11 +13,25 @@ call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" snippets
+" vim-snippets = predefined snippets
+" ultisnips = snippet engine
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+" auto pairs for brackets, parens, quotes
+Plugin 'jiangmiao/auto-pairs'
+
+" auto completion
+Plugin 'Valloric/YouCompleteMe'
+
+
+" Syntax checker
+
+Plugin 'vim-syntastic/syntastic'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -35,20 +49,26 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 " SETTINGS
-
-:set ruler
-:syntax enable
-:set antialias
-:set smartcase
-:set ts=4
-:set shiftwidth=4
-:set expandtab
-:set smartindent
-:set mouse=a
+set nowrap
+set whichwrap=b,s
+set foldmethod=indent
+set showcmd
+set ruler
+syntax enable
+set antialias
+set smartcase
+set ts=4
+set shiftwidth=4
+set expandtab
+set smartindent
+set mouse=a
 set pythonthreedll=/usr/local/bin/python3
 
-" KEYMAPS
-
+" special settings to make links bars
+" visible in vim help
+set conceallevel=0
+hi link HelpBar Normal " KEYMAPS
+hi link HelpStar Normal
 " Quick exit from insert mode
 :imap jk <Esc> 
 inoremap jk <Esc>
@@ -59,7 +79,7 @@ inoremap jk <Esc>
 :vnoremap <Tab> >
 :vnoremap <S-Tab> <lt>
 
-" Mmove lines using shift
+" Move lines using shift
 :nnoremap <S-Up> :m-2<CR>
 :nnoremap <S-Down> :m+<CR>
 :inoremap <S-Up> <Esc>:m-2<CR>
@@ -67,7 +87,12 @@ inoremap jk <Esc>
 
 
 " OTHER
-
+"let g:ycm_key_list_select_completion=[]
+"let g:ycm_key_list_previous_completion=[]
 " Specify python version for ultisnips
 let g:UltiSnipsUsePythonVersion = 3
 let g:UltiSnipsListSnippets = '<c-l>'  
+let g:UltiSnipsExpandTrigger = '<c-e>'
+let g:ultisnips_python_style = 'numpy'
+let g:ultisnips_python_quoting_style = 'single'
+
