@@ -18,15 +18,16 @@ export FLASK_ENV="development"
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 export REACT_EDITOR='code'
+test -f "~/.api_keys" && source "~/.api_keys"
 
 # PATH
 PATH=$PATH:~/bin
-PATH=$PATH:/usr/local/bin/code #vscode
 export PATH
 
 # PROMPT
 # parse_git_branch (defined below) will show a git branch if one is there
-PS1="\u@\h \w \[\033[32m\]\$(parse_git_branch)\[\033[0m\]$ "
+PS1="m@ksim \w \[\033[32m\]\$(parse_git_branch)\[\033[0m\]$ "
+#if [ -f '~/.custom_ps' ]; then . '~/.custom_ps'; fi
 
 # ALIASES
 
